@@ -136,97 +136,97 @@ int filter(int last_pos[2], int pos[2], int level)
 
 void set_tft()
 {
-    // パネルクラスに各種設定値を代入していきます。
-    // （LCD一体型製品のパネルクラスを選択した場合は、
-    //   製品に合った初期値が設定されているので設定は不要です）
+    // I will add various settings to the panel class.
+    // (If you select a panel class for an LCD integrated product,
+    //   The initial value is set to match the product, so no setting is required.)
 
-    // 通常動作時のSPIクロックを設定します。
-    // ESP32のSPIは80MHzを整数で割った値のみ使用可能です。
-    // 設定した値に一番近い設定可能な値が使用されます。
+    // Set the SPI clock during normal operation.
+    // Esp32 SPI is only available with 80MHz broken by an integer.
+    // The configurable value closest to the set value is used.
     panel.freq_write = 60000000;
     //panel.freq_write = 20000000;
 
-    // 単色の塗り潰し処理時のSPIクロックを設定します。
-    // 基本的にはfreq_writeと同じ値を設定しますが、
-    // より高い値を設定しても動作する場合があります。
+    // Set the SPI clock during the single-color fill process.
+    // Basically freq_write same value as the same value.
+    // Setting a higher value may still work.
     panel.freq_fill = 60000000;
     //panel.freq_fill  = 27000000;
 
-    // LCDから画素データを読取る際のSPIクロックを設定します。
+    // Set the SPI clock for reading pixel data from the LCD.
     panel.freq_read = 16000000;
 
-    // SPI通信モードを0~3から設定します。
+    // Set spi communication mode from 0 to 3.
     panel.spi_mode = 0;
 
-    // データ読み取り時のSPI通信モードを0~3から設定します。
+    // Set spi communication mode at the time of data reading from 0 to 3.
     panel.spi_mode_read = 0;
 
-    // 画素読出し時のダミービット数を設定します。
-    // 画素読出しでビットずれが起きる場合に調整してください。
+    // Set the number of dummy bits when reading pixels.
+    //  Adjust when bit shift occurs in pixel reading.
     panel.len_dummy_read_pixel = 8;
 
-    // データの読取りが可能なパネルの場合はtrueを、不可の場合はfalseを設定します。
-    // 省略時はtrueになります。
+    // Set true for panels that can read data, false if not possible.
+    // If omitted, it will be true.
     panel.spi_read = true;
 
-    // データの読取りMOSIピンで行うパネルの場合はtrueを設定します。
-    // 省略時はfalseになります。
+    // Set true for panels that are performed with the read data MOSI pin.
+    // If omitted, it will be false.
     panel.spi_3wire = false;
 
-    // LCDのCSを接続したピン番号を設定します。
-    // 使わない場合は省略するか-1を設定します。
+    // Set the pin number to which the LCD CS is connected.
+    // If not, omit it or set -1.
     panel.spi_cs = LCD_CS;
 
-    // LCDのDCを接続したピン番号を設定します。
+    // Set the pin number to which the LCD DC is connected.
     panel.spi_dc = LCD_DC;
 
-    // LCDのRSTを接続したピン番号を設定します。
-    // 使わない場合は省略するか-1を設定します。
+    //  Set the pin number to which the LCD RST is connected.
+    // If not, omit it or set -1.
     panel.gpio_rst = LCD_RST;
 
-    // LCDのバックライトを接続したピン番号を設定します。
-    // 使わない場合は省略するか-1を設定します。
+    // Set the pin number to which the LCD backlight is connected.
+    //  If not, omit it or set -1.
     panel.gpio_bl = LCD_BL;
 
-    // バックライト使用時、輝度制御に使用するPWMチャンネル番号を設定します。
-    // PWM輝度制御を使わない場合は省略するか-1を設定します。
+    // When using backlight, set the PWM channel number used for brightness control.
+    // If you do not want to use PWM brightness control, omit it or set -1.
     panel.pwm_ch_bl = -1;
 
-    // バックライト点灯時の出力レベルがローかハイかを設定します。
-    // 省略時は true。true=HIGHで点灯 / false=LOWで点灯になります。
+    //  Set the output level when the backlight is on low or high.
+    // True when omitted. It lights up at true=HIGH / false=LOW.
     panel.backlight_level = true;
 
-    // invertDisplayの初期値を設定します。trueを設定すると反転します。
-    // 省略時は false。画面の色が反転している場合は設定を変更してください。
+    // Set the initial value of invertDisplay.If true, it will be reversed.
+    // False when omitted.If the color of the screen is inverted, change the settings.
     panel.invert = false;
 
-    // パネルの色順がを設定します。  RGB=true / BGR=false
-    // 省略時はfalse。赤と青が入れ替わっている場合は設定を変更してください。
+    // RGB=true / BGR=false The color order of the panels is set.RGB=true / BGR=false
+    // False when omitted.If red and blue are replaced, change the settings.
     panel.rgb_order = false;
 
-    // パネルのメモリが持っているピクセル数（幅と高さ）を設定します。
-    // 設定が合っていない場合、setRotationを使用した際の座標がずれます。
-    // （例：ST7735は 132x162 / 128x160 / 132x132 の３通りが存在します）
+    // Set the number of pixels (width and height) that the panel's memory has.
+    // If the settings are not right, the coordinates when using setRotation are off.
+    // (Example: ST7735 has three streets: 132x162 / 128x160 / 132x132)
     panel.memory_width = LCD_WIDTH;
     panel.memory_height = LCD_HEIGHT;
 
-    // パネルの実際のピクセル数（幅と高さ）を設定します。
-    // 省略時はパネルクラスのデフォルト値が使用されます。
+    // Set the actual number of pixels (width and height) of the panel.
+    // When omitted, the default value of the panel class is used.
     panel.panel_width = LCD_WIDTH;
     panel.panel_height = LCD_HEIGHT;
 
-    // パネルのオフセット量を設定します。
-    // 省略時はパネルクラスのデフォルト値が使用されます。
+    // Set the amount of offset for the panel.
+    // When omitted, the default value of the panel class is used.
     panel.offset_x = 0;
     panel.offset_y = 0;
 
-    // setRotationの初期化直後の値を設定します。
+    // Set the value immediately after initializing setRotation.Set the value immediately after initializing setRotation.
     panel.rotation = 0;
 
-    // setRotationを使用した時の向きを変更したい場合、offset_rotationを設定します。
-    // setRotation(0)での向きを 1の時の向きにしたい場合、 1を設定します。
+    // If you want to change the direction when using setRotation offset_rotation the settings.
+    // If you want the direction at setRotation(0) to be the direction at the time of 1, set 1.
     panel.offset_rotation = 0;
 
-    // 設定を終えたら、LGFXのsetPanel関数でパネルのポインタを渡します。
+    // When you're done, pass the panel pointer in lgfx's setPanel function.
     tft.setPanel(&panel);
 }
