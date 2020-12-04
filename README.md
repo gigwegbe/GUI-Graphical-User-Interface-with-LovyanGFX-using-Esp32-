@@ -13,3 +13,7 @@ This repository contains codebase on GUI Graphical User Interface with LovyanGFX
 - [ ] - Introduction to LovyanGFX Part 8 Creating GIFs from screen captures
 - [ ] - Introduction to LovyanGFX Part 9 Drawing speed measurement
 - [ ] - Introduction to LovyanGFX Part 10 External LCD connection
+
+
+Reference
+- https://lang-ship.com/blog/work/lovyangfx-1/
