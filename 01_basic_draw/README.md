@@ -5,12 +5,37 @@ This repository contains codebase on GUI Graphical User Interface with LovyanGFX
 Overview
 ```
 
+I am using LovyanGFX made by Mr. Rabiyan in my own M5 Lite library etc., but I would like to reconfirm how to use LovyanGFX for explanation of drawing system.
+
+- https://lang-ship.com/blog/files/LovyanGFX/
+
+The materials summarized above are available.
+
+
+```
+What is LovyanGFX?
+
+```
+
+- https://github.com/lovyan03/LovyanGFX
+A crisply tuned graphics library with some compatibility with Adafruit GFX and TFT_eSPI. Since it is registered in the library manager of Arduino IDE, you can use it easily.
+
+
 
 ```
 Rough feature list of LovyanGFX
 
 ```
 
+- LCD (board) automatic recognition
+- Basic drawing function
+- Sprite function
+- Image processing function
+- Text processing function
+- Touch panel compatible
+- There are various functions, but it is a typical function. After all automatic recognition of the board is convenient. It is a little troublesome when multiple LCDs are connected, but it can be used quickly as long as it is moved by a compatible board.
+
+- This time I would like to investigate the basic drawing function. We will continue to do other functions in the future. So it suddenly becomes a basic drawing without explanation of how to use lcd.width ()!
 
 
 ```
