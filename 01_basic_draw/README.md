@@ -2,7 +2,7 @@
 This repository contains codebase on GUI Graphical User Interface with LovyanGFX using Esp32  TFT 3'5 with camera. 
 
 ```
-Overview
+<strong>Overview</strong>
 ```
 
 I am using LovyanGFX made by Mr. Rabiyan in my own M5 Lite library etc., but I would like to reconfirm how to use LovyanGFX for explanation of drawing system.
@@ -13,17 +13,17 @@ The materials summarized above are available.
 
 
 ```
-What is LovyanGFX?
+<strong>What is LovyanGFX?</strong>
 
 ```
 
 - https://github.com/lovyan03/LovyanGFX
-A crisply tuned graphics library with some compatibility with Adafruit GFX and TFT_eSPI. Since it is registered in the library manager of Arduino IDE, you can use it easily.
+- A crisply tuned graphics library with some compatibility with Adafruit GFX and TFT_eSPI. Since it is registered in the library manager of Arduino IDE, you can use it easily.
 
 
 
 ```
-Rough feature list of LovyanGFX
+<strong>Rough feature list of LovyanGFX</strong>
 
 ```
 
