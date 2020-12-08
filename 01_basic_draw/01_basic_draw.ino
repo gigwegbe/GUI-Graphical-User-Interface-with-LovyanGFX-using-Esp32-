@@ -198,7 +198,7 @@ void set_tft()
 
     // Set the initial value of invertDisplay.If true, it will be reversed.
     // False when omitted.If the color of the screen is inverted, change the settings.
-    panel.invert = false;
+    panel.invert = true;
 
     // RGB=true / BGR=false The color order of the panels is set.RGB=true / BGR=false
     // False when omitted.If red and blue are replaced, change the settings.

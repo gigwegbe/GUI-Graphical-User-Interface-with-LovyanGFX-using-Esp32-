@@ -2,7 +2,7 @@
 This repository contains codebase on GUI Graphical User Interface with LovyanGFX using Esp32  TFT 3'5 with camera. 
 
 ## Task List
-- [ ] - Base Setup for LovyanGFX using Esp32  TFT 3'5 with camera
+- [x] - Base Setup for LovyanGFX using Esp32  TFT 3'5 with camera
 - [ ] - Introduction to LovyanGFX Part 1 Basic drawing system
 - [ ] - Introduction to LovyanGFX Part 2 Font drawing system
 - [ ] - Introduction to LovyanGFX Part 3 Japanese font drawing system

@@ -2,7 +2,7 @@
 This repository contains codebase on GUI Graphical User Interface with LovyanGFX using Esp32  TFT 3'5 with camera. 
 
 ```
-##Overview
+Overview
 ```
 
 I am using LovyanGFX made by Mr. Rabiyan in my own M5 Lite library etc., but I would like to reconfirm how to use LovyanGFX for explanation of drawing system.
@@ -13,7 +13,7 @@ The materials summarized above are available.
 
 
 ```
-##What is LovyanGFX?
+What is LovyanGFX?
 
 ```
 
@@ -23,7 +23,7 @@ The materials summarized above are available.
 
 
 ```
-##Rough feature list of LovyanGFX
+Rough feature list of LovyanGFX
 
 ```
 
