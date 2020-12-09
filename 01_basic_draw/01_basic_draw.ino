@@ -74,12 +74,16 @@ void setup()
     set_tft();
     tft.begin();
     //tft.init();
+
     tft.fillScreen(TFT_BLACK);
-    tft.fillRect(0, 0, 80, 40, TFT_RED);
-    tft.fillRect(80, 0, 80, 40, TFT_GREEN);
-    tft.fillRect(160, 0, 80, 40, TFT_BLUE);
-    tft.fillRect(240, 0, 80, 40, TFT_YELLOW);
-    SPI_OFF_TFT;
+    tft.drawPixel(120,120,TFT_RED); // Pointillism
+    tft.drawLine(120,120,200,200, TFT_RED); // drawline 
+    tft.drawGradientLine(100,100,140,140,TFT_RED, TFT_WHITE); //drawGradientLine(x0,x1,y0,y1,colorstart,colorend)
+    tft.drawFastHLine(50,50,100, TFT_YELLOW); // drawFastHLine(x,y, w, color) w for width
+    tft.drawFastVLine(40,40,100, TFT_WHITE);  // tft.drawFastVLine(x,y,h,color) h for height
+    tft.drawRect(5,5,100,50); //tft.drawRect(x,y,h,w)
+
+
 }
 
 void loop()
@@ -92,46 +96,6 @@ void loop()
 #ifdef FT6236_TOUCH
     ft6236_pos(pos);
 #endif
-    Serial.printf("%d,%d\n", pos[0], pos[1]);
-    if (0 < pos[1] && pos[1] < 40)
-    {
-        if (0 < pos[0] && pos[0] < 80)
-        {
-            draw_color = TFT_RED;
-        }
-        else if (80 < pos[0] && pos[0] < 160)
-        {
-            draw_color = TFT_GREEN;
-        }
-
-        else if (160 < pos[0] && pos[0] < 240)
-        {
-            draw_color = TFT_BLUE;
-        }
-        else if (240 < pos[0] && pos[0] < 320)
-        {
-            draw_color = TFT_YELLOW;
-        }
-    }
-    else
-    {
-        tft.fillRect(pos[0], pos[1], 3, 3, draw_color);
-    }
-}
-
-int filter(int last_pos[2], int pos[2], int level)
-{
-    int temp = (last_pos[0] - pos[0]) * (last_pos[0] - pos[0]) + (last_pos[1] - pos[1]) * (last_pos[1] - pos[1]);
-    last_pos[0] = pos[0];
-    last_pos[1] = pos[1];
-    if (temp > level)
-    {
-        return 0;
-    }
-    else
-    {
-        return 1;
-    }
 }
 
 void set_tft()
@@ -198,7 +162,7 @@ void set_tft()
 
     // Set the initial value of invertDisplay.If true, it will be reversed.
     // False when omitted.If the color of the screen is inverted, change the settings.
-    panel.invert = true;
+    panel.invert = false;
 
     // RGB=true / BGR=false The color order of the panels is set.RGB=true / BGR=false
     // False when omitted.If red and blue are replaced, change the settings.
