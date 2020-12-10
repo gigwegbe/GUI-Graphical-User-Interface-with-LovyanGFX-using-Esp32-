@@ -81,7 +81,10 @@ void setup()
     tft.drawGradientLine(100,100,140,140,TFT_RED, TFT_WHITE); //drawGradientLine(x0,x1,y0,y1,colorstart,colorend)
     tft.drawFastHLine(50,50,100, TFT_YELLOW); // drawFastHLine(x,y, w, color) w for width
     tft.drawFastVLine(40,40,100, TFT_WHITE);  // tft.drawFastVLine(x,y,h,color) h for height
-    tft.drawRect(5,5,100,50); //tft.drawRect(x,y,h,w)
+    tft.drawRect(5,430,100,50); //tft.drawRect(x,y,h,w)
+    tft.drawRect(5,300,50,100); //tft.drawRect(x,y,h,w)
+    tft.fillRect(150,300,50,100,TFT_RED); //tft.drawRect(x,y,h,w,color)
+    tft.fillScreen(TFT_RED);
 
 
 }
