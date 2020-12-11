@@ -92,9 +92,8 @@ void setup()
     tft.fillRoundRect(50,50,100,100,20,TFT_WHITE); //tft.fillRoundRect(x,y,w,h,r) r rounded corners radius. 
     tft.drawCircle(200,200,20,TFT_WHITE); //tft.drawCircle(x,y,r,color)
     tft.fillCircle(230,230,20, TFT_RED); //tft.fillCircle(x,y,r,color)
-    
-
-
+    tft.drawEllipse(100,100,50,60,TFT_WHITE); // tft.drawEllipse(x,y,rx,ry,color);
+    tft.fillEllipse(200,200,50,60,TFT_WHITE); // tft.fillEllipse(x,y,rx,ry,color);
 
 }
 
