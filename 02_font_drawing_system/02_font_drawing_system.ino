@@ -75,7 +75,42 @@ void setup()
     tft.begin();
     //tft.init();
 
+    // Screen fill
     tft.fillScreen(TFT_BLACK);
+    
+    // Reset the cursor to the upper left
+    tft.setCursor(0,0); 
+
+    // Font specification 
+    tft.setFont(& fonts :: Font0); 
+
+    // Font color set 
+    tft.setTextColor(TFT_WHITE, TFT_BLACK); 
+
+    tft.setTextSize(1); 
+    tft.print("print"); 
+    tft.println(" println"); 
+    //tft.printf("printf $d \n" , 10); 
+    tft.setCursor(100,100); 
+    tft.setTextSize(2,4); 
+    tft.println("Size2x4");
+
+    // About the cursor(wrap true)
+    // tft.setCursor(200,200);
+    // tft.println(" ABCDEFGHIJKLMNOPQRSTUVWXYZ \ nabcdefghijklmnopqrstuvwxyz ");
+
+    // // About the cursor(wrap false)
+    // tft.setCursor(200,200);
+    // tft.setTextWrap(false); 
+    // tft.println(" ABCDEFGHIJKLMNOPQRSTUVWXYZ \ nabcdefghijklmnopqrstuvwxyz ");
+
+    // Specify drawing range 
+    tft.setCursor(64,64);
+    tft.setClipRect(64,64, 128, 128); 
+    tft.println("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    tft.clearClipRect(); 
+    tft.setCursor(0,0); 
+    tft.println("1234567890"); 
 
 }
 
