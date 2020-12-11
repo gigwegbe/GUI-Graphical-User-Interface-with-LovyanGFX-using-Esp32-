@@ -84,7 +84,16 @@ void setup()
     tft.drawRect(5,430,100,50); //tft.drawRect(x,y,h,w)
     tft.drawRect(5,300,50,100); //tft.drawRect(x,y,h,w)
     tft.fillRect(150,300,50,100,TFT_RED); //tft.drawRect(x,y,h,w,color)
-    tft.fillScreen(TFT_RED);
+    //tft.fillScreen(TFT_RED); // alternative to fillRect(0,0,_width,_height)
+    //tft.clear(TFT_WHITE);
+    //tft.floodFill(240,160,TFT_RED);
+    //tft.paint(240,160,TFT_RED);
+    tft.drawRoundRect(50,50,200,200,20); //tft.drawRoundRect(x,y,w,h,r) r rounded corners radius. 
+    tft.fillRoundRect(50,50,100,100,20,TFT_WHITE); //tft.fillRoundRect(x,y,w,h,r) r rounded corners radius. 
+    tft.drawCircle(200,200,20,TFT_WHITE); //tft.drawCircle(x,y,r,color)
+    tft.fillCircle(230,230,20, TFT_RED); //tft.fillCircle(x,y,r,color)
+    
+
 
 
 }
