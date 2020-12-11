@@ -76,24 +76,7 @@ void setup()
     //tft.init();
 
     tft.fillScreen(TFT_BLACK);
-    tft.drawPixel(120,120,TFT_RED); // Pointillism
-    tft.drawLine(120,120,200,200, TFT_RED); // drawline 
-    tft.drawGradientLine(100,100,140,140,TFT_RED, TFT_WHITE); //drawGradientLine(x0,x1,y0,y1,colorstart,colorend)
-    tft.drawFastHLine(50,50,100, TFT_YELLOW); // drawFastHLine(x,y, w, color) w for width
-    tft.drawFastVLine(40,40,100, TFT_WHITE);  // tft.drawFastVLine(x,y,h,color) h for height
-    tft.drawRect(5,430,100,50); //tft.drawRect(x,y,h,w)
-    tft.drawRect(5,300,50,100); //tft.drawRect(x,y,h,w)
-    tft.fillRect(150,300,50,100,TFT_RED); //tft.drawRect(x,y,h,w,color)
-    //tft.fillScreen(TFT_RED); // alternative to fillRect(0,0,_width,_height)
-    //tft.clear(TFT_WHITE);
-    //tft.floodFill(240,160,TFT_RED);
-    //tft.paint(240,160,TFT_RED);
-    tft.drawRoundRect(50,50,200,200,20); //tft.drawRoundRect(x,y,w,h,r) r rounded corners radius. 
-    tft.fillRoundRect(50,50,100,100,20,TFT_WHITE); //tft.fillRoundRect(x,y,w,h,r) r rounded corners radius. 
-    tft.drawCircle(200,200,20,TFT_WHITE); //tft.drawCircle(x,y,r,color)
-    tft.fillCircle(230,230,20, TFT_RED); //tft.fillCircle(x,y,r,color)
-    tft.drawEllipse(100,100,50,60,TFT_WHITE); // tft.drawEllipse(x,y,rx,ry,color);
-    tft.fillEllipse(200,200,50,60,TFT_WHITE); // tft.fillEllipse(x,y,rx,ry,color);
+
 }
 
 void loop()
